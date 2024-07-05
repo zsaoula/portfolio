@@ -8,6 +8,8 @@ COPY src/package.json src/package-lock.json ./
 # Installer les dépendances
 RUN npm install
 
+RUN npx update-browserslist-db@latest
+
 # Copier le reste de l'application depuis src
 COPY src ./
 
