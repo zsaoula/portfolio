@@ -1,5 +1,5 @@
 # Étape de build
-FROM node:latest AS build
+FROM node:16.18.1 AS build
 WORKDIR /app
 
 # Copier package.json et package-lock.json depuis src dans le répertoire de travail
