@@ -22,7 +22,8 @@ FROM nginx:latest AS server
 #RUN mkdir -p /usr/share/nginx/html
 
 # Copier les fichiers construits depuis l'étape de build vers le répertoire nginx
-COPY --from=build /app/dist /usr/share/nginx/html
+# Copier index.html spécifiquement
+COPY --from=build /app/src/dist/index.html /usr/share/nginx/html/index.html
 #COPY --from=build /app/src /usr/share/nginx/html/src
 
 # Exposer le port sur lequel nginx servira l'application
