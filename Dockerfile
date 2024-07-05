@@ -21,7 +21,7 @@ FROM nginx:latest AS server
 
 # Copier les fichiers construits depuis l'étape de build vers le répertoire nginx
 COPY --from=build /app/dist /usr/share/nginx/html
-COPY --from=build /app/src /usr/share/nginx/html/src
+#COPY --from=build /app/src /usr/share/nginx/html/src
 
 # Exposer le port sur lequel nginx servira l'application
 #EXPOSE 80
