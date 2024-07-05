@@ -9,7 +9,7 @@ steps:
       dockerfile: Dockerfile
       context: .
       registry: hub.codefirst.iut.uca.fr
-      repo: hub.codefirst.iut.uca.fr/zakariya.saoula/portfolio-Zakariya-SAOULA
+      repo: hub.codefirst.iut.uca.fr/zakariya.saoula/portfolio-zakariya-saoula
 
       username:
         from_secret: SECRET_REGISTRY_USERNAME
@@ -19,7 +19,7 @@ steps:
   - name: deploy-container
     image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dockerproxy-clientdrone:latest
     environment:
-      IMAGENAME: hub.codefirst.iut.uca.fr/zakariya.saoula/portfolio-Zakariya-SAOULA
+      IMAGENAME: hub.codefirst.iut.uca.fr/zakariya.saoula/portfolio-zakariya-saoula
       CONTAINERNAME: portfolio
       COMMAND: create
       OVERWRITE: true
