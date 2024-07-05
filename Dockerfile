@@ -11,7 +11,7 @@ RUN npm install
 RUN npx update-browserslist-db@latest
 
 # Copier le reste de l'application depuis src
-COPY src/* ./
+COPY src ./
 
 # Compiler et packager les fichiers css/js avec webpack
 RUN npm run build
