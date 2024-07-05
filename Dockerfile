@@ -24,6 +24,9 @@ RUN mkdir -p /usr/share/nginx/html
 # Copier les fichiers construits depuis l'étape de build vers le répertoire nginx
 # Copier index.html spécifiquement
 COPY --from=build /app/dist/img /usr/share/nginx/html/img
+COPY --from=build /app/dist/css /usr/share/nginx/html/css 
+COPY --from=build /app/dist/docs /usr/share/nginx/html/docs 
+COPY --from=build /app/dist/js /usr/share/nginx/html/js
 COPY --from=build /app/dist/index.html /usr/share/nginx/html/index.html
 #COPY --from=build /app/dist /usr/share/nginx/html
 #COPY --from=build /app/dist /usr/share/nginx/html/dist
