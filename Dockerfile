@@ -2,14 +2,14 @@
 FROM node:latest AS build
 WORKDIR /app
 
-# Copier package.json et package-lock.json
-COPY package*.json ./
+# Copier package.json et package-lock.json depuis src dans le répertoire de travail
+COPY src/package.json src/package-lock.json ./
 
 # Installer les dépendances
 RUN npm install
 
-# Copier le reste de l'application
-COPY . .
+# Copier le reste de l'application depuis src
+COPY src ./
 
 # Compiler et packager les fichiers css/js avec webpack
 RUN npm run build
