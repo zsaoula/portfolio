@@ -19,6 +19,8 @@ RUN npm run build
 # Étape de serveur
 FROM nginx:latest AS server
 
+RUN mkdir -p /usr/share/nginx/html
+
 # Copier les fichiers construits depuis l'étape de build vers le répertoire nginx
 COPY --from=build /app/dist /usr/share/nginx/html
 #COPY --from=build /app/src /usr/share/nginx/html/src
